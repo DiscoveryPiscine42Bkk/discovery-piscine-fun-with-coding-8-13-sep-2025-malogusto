@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab</title>
+</head>
+<body style = "width: 100%;">
+<hr>
+    <section>
+        <div>
+            LOL
+        </div>
+        <div>
+            SLEEP
+        </div>
+    </section>
+</body>
+</html>
+
+<style>
+    section{
+        display: flex;
+    }
+    div{
+        flex: 1;
+        border: 1px solid black;
+        padding: 100px 0 100px 0;
+        font-size: 32px;
+    }
+        div:nth-child(1){
+            background-color: rgb(248, 21, 21);
+        }
+        div:nth-child(2){
+            background-color: rgb(7, 11, 252);
+        }
+    
+    @media (max-width: 600px) {
+      section {
+        flex-direction: column;
+      }
+    }
+</style>
