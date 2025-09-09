@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do or Not To Do</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background: #f5f5f5;
+    }
+    #controls {
+      margin-bottom: 20px;
+    }
+    #newBtn {
+      padding: 10px 20px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #newBtn:hover {
+      background: #0056b3;
+    }
+    #ft_list {
+      display: flex;
+      flex-direction: column-reverse; /* new items appear on top visually */
+      gap: 10px;
+    }
+    #ft_list div {
+      background: #fff;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #ft_list div:hover {
+      background: #ffe0e0;
+    }
+  </style>
+</head>
+<body>
+  <div id="controls">
+    <button id="newBtn">New</button>
+  </div>
+  <div id="ft_list"></div>
+
+  <script src="todo.js"></script>
+</body>
+</html>
