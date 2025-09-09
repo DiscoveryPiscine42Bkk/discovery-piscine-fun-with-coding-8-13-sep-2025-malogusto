@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Calculator</title>
+</head>
+<body>
+  <h1>Basic Calculator</h1>
+  <form id="calcForm">
+    <input type="text" id="left" placeholder="Left number">
+    <select id="operator">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+      <option value="%">%</option>
+    </select>
+    <input type="text" id="right" placeholder="Right number">
+    <input type="submit" value="Try me!">
+  </form>
+
+  <script>
+    const form = document.getElementById("calcForm");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const left = document.getElementById("left").value.trim();
+      const right = document.getElementById("right").value.trim();
+      const op = document.getElementById("operator").value;
+
+      // ตรวจสอบว่าเป็นจำนวนเต็มบวกหรือไม่
+      if (!/^[0-9]+$/.test(left) || !/^[0-9]+$/.test(right)) {
+        alert("Error :(");
+        return;
+      }
+
+      const l = parseInt(left, 10);
+      const r = parseInt(right, 10);
+      let result;
+
+      if ((op === "/" || op === "%") && r === 0) {
+        alert("It's over 9000!");
+        console.log("It's over 9000!");
+        return;
+      }
+
+      switch (op) {
+        case "+": result = l + r; break;
+        case "-": result = l - r; break;
+        case "*": result = l * r; break;
+        case "/": result = l / r; break;
+        case "%": result = l % r; break;
+        default: result = "Error :(";
+      }
+
+      alert(result);
+      console.log(result);
+    });
+
+    // alert ทุก 30 วินาที
+    setInterval(() => {
+      alert("Please, use me...");
+    }, 30000);
+  </script>
+</body>
+</html>
